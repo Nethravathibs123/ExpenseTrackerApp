@@ -1,37 +1,73 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+/* Styling for the overall expense list */
+#expense-list {
+    list-style-type: disc; /* Adds bullets */
+    padding-left: 10px;    /* Creates space for bullets */
+    margin-top: 10px;
+    list-style-position: outside; /* Bullets placed outside the content */
 }
 
-.input-section {
-    margin-bottom: 20px;
+/* Styling for each expense item */
+.expense-item {
+    display: flex;
+    flex-direction: column; /* Stack columns vertically */
+    background-color: #fafafa;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(74, 73, 73, 0.05);
 }
 
-.expenses-list {
-    margin-bottom: 20px;
+/* Flexbox layout for content (side by side) */
+.expense-content {
+    display: flex; 
+    align-items: center;
+    width: 30%;
+    gap: 5px; /* Gap between columns */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    list-style: none; /* Remove default bullet points from <ul> */
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+/* Styling for each column */
+.expense-column {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+/* Styling for action buttons (Delete/Edit) */
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px; /* Space above the buttons */
 }
 
-th {
-    background-color: #f2f2f2;
-}
-
-button {
-    padding: 8px 16px;
+.actions button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 3px;
+    background-color: #28282b;
+    color: white;
+    border: none;
     cursor: pointer;
 }
 
-.total-section {
-    font-size: 18px;
-    font-weight: bold;
+.actions button.delete-btn {
+    background-color: #686666;
+}
+
+.actions button:hover {
+    opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .expense-content {
+        flex-direction: column;
+    }
+
+    .expense-column {
+        text-align: left;
+        padding: 10px;
+    }
 }
