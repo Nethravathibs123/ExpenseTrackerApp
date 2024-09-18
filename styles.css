@@ -1,73 +1,31 @@
-/* Styling for the overall expense list */
-#expense-list {
-    list-style-type: disc; /* Adds bullets */
-    padding-left: 10px;    /* Creates space for bullets */
-    margin-top: 10px;
-    list-style-position: outside; /* Bullets placed outside the content */
-}
-
-/* Styling for each expense item */
-.expense-item {
-    display: flex;
-    flex-direction: column; /* Stack columns vertically */
-    background-color: #fafafa;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(74, 73, 73, 0.05);
-}
-
-/* Flexbox layout for content (side by side) */
 .expense-content {
-    display: flex; 
-    align-items: center;
-    width: 30%;
-    gap: 5px; /* Gap between columns */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    list-style: none; /* Remove default bullet points from <ul> */
-}
-
-/* Styling for each column */
-.expense-column {
-    flex: 1;
-    text-align: center;
-    padding: 5px;
-}
-
-/* Styling for action buttons (Delete/Edit) */
-.actions {
     display: flex;
-    gap: 10px;
-    margin-top: 10px; /* Space above the buttons */
+    align-items: center; /* Align items vertically centered */
+    justify-content: space-between; /* Spread items across the row */
+    list-style: none;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc; /* Optional: Adds a border to each expense */
+    border-radius: 5px; /* Optional: Rounds the corners */
+    background-color: #f9f9f9; /* Optional: Adds a background color */
+    list-style-type: disc; /* This will enable the bullet points */
+    list-style-position: inside; /* Make sure the bullet is inside the row */
 }
 
-.actions button {
-    padding: 5px 10px;
-    font-size: 14px;
-    border-radius: 3px;
-    background-color: #28282b;
-    color: white;
-    border: none;
-    cursor: pointer;
+button {
+    margin-left: 10px; /* Space between the buttons */
 }
 
-.actions button.delete-btn {
-    background-color: #686666;
+/* Ensure this applies to the outer list, not the inner elem+ents */
+#expense-list {
+   
+    padding-left: 20px; /* Indent to ensure bullets are visible */
+    list-style-type: none; /* Remove bullet for the inner content */
 }
 
-.actions button:hover {
-    opacity: 0.9;
+.expense-item {
+    width: 50%; /* Make each item take the full width */
+    margin-bottom: 10px; /* Add space between each row */
+   
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .expense-content {
-        flex-direction: column;
-    }
-
-    .expense-column {
-        text-align: left;
-        padding: 10px;
-    }
-}

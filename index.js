@@ -20,9 +20,8 @@ function renderExpenses() {
                 <li class="expense-column">${expense.category}</li>
                 <li class="expense-column">${expense.description}</li>
                 
-                    <button class="delete-btn" data-index="${index}">Delete</button>
-                    <button class="edit-btn" data-index="${index}">Edit</button>
-
+                <button class="delete-btn" data-index="${index}">Delete</button>
+                <button class="edit-btn" data-index="${index}">Edit</button>
             </ul>
         `;
 
