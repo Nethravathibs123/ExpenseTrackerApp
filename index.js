@@ -10,24 +10,33 @@ let editingIndex = -1; // Used to track the editing state
 function renderExpenses() {
     expenseList.innerHTML = ''; // Clear the existing list
     expenses.forEach((expense, index) => {
-        const expenseItem = document.createElement('ul');
-        expenseItem.className = 'expense-item';
+        const newli = document.createElement('li'); // Create a list item
+        newli.className = 'expense-content'; // Set class for styling
 
-        // Present the details in a row with each piece in a separate column
-        expenseItem.innerHTML = `
-            <ul class="expense-content">
-                <li class="expense-column">${expense.amount}</li>
-                <li class="expense-column">${expense.category}</li>
-                <li class="expense-column">${expense.description}</li>
-                
-                <button class="delete-btn" data-index="${index}">Delete</button>
-                <button class="edit-btn" data-index="${index}">Edit</button>
-            </ul>
-        `;
+        // Set content using template literals for consistency
+        newli.textContent = `${expense.amount} - ${expense.description} - ${expense.category}`;
 
-        expenseList.appendChild(expenseItem);
+        // Create delete button
+        const dltButton = document.createElement('button');
+        dltButton.textContent = 'Delete';
+        dltButton.classList.add('delete-btn');
+        dltButton.setAttribute('data-index', index);
+
+        // Create edit button
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Edit';
+        editButton.classList.add('edit-btn');
+        editButton.setAttribute('data-index', index);
+
+        // Append buttons to the list item
+        newli.appendChild(dltButton);
+        newli.appendChild(editButton);
+
+        // Append the list item to the expense list
+        expenseList.appendChild(newli);
     });
 }
+
 
 
 // Add new expense or update an existing one
@@ -69,7 +78,7 @@ expenseList.addEventListener('click', (event) => {
     }
 
     if (event.target.classList.contains('edit-btn')) {
-        // Edit the expense
+        // Edit the expense 
         const index = event.target.getAttribute('data-index');
         const expense = expenses[index];
 

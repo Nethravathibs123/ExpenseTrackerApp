@@ -1,31 +1,4 @@
-.expense-content {
-    display: flex;
-    align-items: center; /* Align items vertically centered */
-    justify-content: space-between; /* Spread items across the row */
-    list-style: none;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc; /* Optional: Adds a border to each expense */
-    border-radius: 5px; /* Optional: Rounds the corners */
-    background-color: #f9f9f9; /* Optional: Adds a background color */
-    list-style-type: disc; /* This will enable the bullet points */
-    list-style-position: inside; /* Make sure the bullet is inside the row */
-}
 
 button {
     margin-left: 10px; /* Space between the buttons */
 }
-
-/* Ensure this applies to the outer list, not the inner elem+ents */
-#expense-list {
-   
-    padding-left: 20px; /* Indent to ensure bullets are visible */
-    list-style-type: none; /* Remove bullet for the inner content */
-}
-
-.expense-item {
-    width: 50%; /* Make each item take the full width */
-    margin-bottom: 10px; /* Add space between each row */
-   
-}
-
